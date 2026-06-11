@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Academic Portfolio</title>
+    <title> Komla SG | Professional Portfolio</title>
     <style>
         /* Base Styling */
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,46 +13,59 @@
         
         /* Navigation */
         nav { position: fixed; top: 0; width: 100%; background: #2c3e50; padding: 15px 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .nav-logo { color: #fff; font-weight: bold; font-size: 1.2rem; text-decoration: none; }
         .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { color: #ddd; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
-        .nav-links a:hover { color: #fff; }
+        .nav-links li { margin-left: 15px; }
+        .nav-links a { color: #ddd; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; padding: 5px 8px; border-radius: 4px; }
+        .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
 
         /* Sections Layout */
         section { padding: 100px 20px 60px 20px; min-height: 100vh; display: flex; justify-content: center; }
         .section-content { max-width: 800px; width: 100%; }
-        h1 { font-size: 2.5rem; margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
-        h2 { font-size: 1.5rem; margin: 20px 0 10px 0; color: #34495e; }
+        h1 { font-size: 2.3rem; margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; margin: 20px 0 10px 0; color: #34495e; }
         p { margin-bottom: 15px; font-size: 1.1rem; }
         ul { margin-bottom: 20px; padding-left: 20px; }
-        li { margin-bottom: 8px; }
+        li { margin-bottom: 10px; }
 
         /* Section Background Alternation */
-        #home { background-color: #ffffff; }
-        #research { background-color: #f9f9f9; }
-        #teaching { background-color: #ffffff; }
+        #home { background-color: #ffffff; display: flex; align-items: center; }
+        #about { background-color: #f9f9f9; }
+        #publications { background-color: #ffffff; }
+        #presentations { background-color: #f9f9f9; }
+        #blog { background-color: #ffffff; }
         #contact { background-color: #f9f9f9; }
 
         /* Home Specifics */
-        .profile-area { display: flex; gap: 30px; align-items: center; margin-top: 30px; }
-        .profile-img { width: 200px; height: 200px; border-radius: 50%; background: #bdc3c7; display: flex; align-items: center; justify-content: center; color: #7f8c8d; font-size: 0.9rem; flex-shrink: 0; }
+        .hero-area { text-align: center; width: 100%; }
+        .hero-title { font-size: 3rem; color: #2c3e50; margin-bottom: 10px; }
+        .hero-subtitle { font-size: 1.5rem; color: #7f8c8d; margin-bottom: 25px; }
+        .btn { display: inline-block; background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .btn:hover { background: #2980b9; }
+
+        /* About Specifics */
+        .profile-area { display: flex; gap: 30px; align-items: flex-start; margin-top: 20px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; background: #bdc3c7; display: flex; align-items: center; justify-content: center; color: #7f8c8d; font-size: 0.9rem; flex-shrink: 0; object-fit: cover; }
+        
+        /* Blog Specifics */
+        .blog-post { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px dashed #bdc3c7; }
+        .blog-date { font-size: 0.9rem; color: #7f8c8d; }
+        .blog-post h3 { color: #2c3e50; margin: 5px 0; }
         
         /* Contact Specifics */
         .contact-info { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; }
-        .contact-info p { margin-bottom: 10px; }
-        .contact-info strong { color: #2c3e50; }
         
         /* Footer */
         footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px; font-size: 0.9rem; }
 
         /* Responsive Design */
-        @media (max-width: 600px) {
-            .profile-area { flex-direction: column; text-align: center; }
+        @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 10px; }
-            .nav-links li { margin: 0 10px; }
-            section { padding-top: 130px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links li { margin: 5px; }
+            .profile-area { flex-direction: column; align-items: center; text-align: center; }
+            section { padding-top: 140px; }
         }
     </style>
 </head>
@@ -61,11 +74,13 @@
     <!-- Top Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Your Name, PhD</a>
+            <a href="#home" class="nav-logo">Your Name</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#presentations">Presentations</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -73,57 +88,80 @@
 
     <!-- Home Section -->
     <section id="home">
+        <div class="section-content hero-area">
+            <h1 class="hero-title">Your Name</h1>
+            <p class="hero-subtitle">Researcher, Writer, & Speaker</p>
+            <p style="max-width: 600px; margin: 0 auto 30px auto;">Welcome to my personal site. I focus on exploring data, solving problems, and sharing insights on technology and education.</p>
+            <a href="#about" class="btn">Learn More About Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
         <div class="section-content">
-            <h1>Welcome</h1>
+            <h1>About Me</h1>
             <div class="profile-area">
-                <!-- Replace 'profile.jpg' with your image file name later if you upload one -->
                 <img src="profile.jpg" alt="Your Name Profile Picture" class="profile-img" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
                 <div id="avatar-fallback" class="profile-img" style="display:none;">[Photo Placeholder]</div>
                 <div>
-                    <p>Hello! I am a researcher and educator specializing in [Your Field/Department] at [Your Institution].</p>
-                    <p>My work primarily explores [Brief 1-sentence summary of your core interest]. Feel free to look through my current projects and teaching schedule below.</p>
+                    <p>I am a [Your Profession/Role] currently based at [Your Institution or Company]. My expertise spans across [Field 1], [Field 2], and [Field 3].</p>
+                    <p>Over the past few years, I have worked on projects ranging from [Example Project] to [Example Project]. I am deeply passionate about translating complex data into accessible stories.</p>
+                    <p>When I am not working, you can find me [Your Hobbies or Interests].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Section -->
-    <section id="research">
+    <!-- Publications Section -->
+    <section id="publications">
         <div class="section-content">
-            <h1>Research</h1>
-            <p>My research focuses on the intersection of [Topic A] and [Topic B]. I investigate how [Core Question Your Research Answers].</p>
+            <h1>Publications</h1>
+            <p>A selection of my peer-reviewed articles, chapters, and whitepapers.</p>
             
-            <h2>Current Projects</h2>
+            <h2>Journal Articles</h2>
             <ul>
-                <li><strong>Project Title One:</strong> A brief description of what this ongoing project is about, your methodologies, or goals.</li>
-                <li><strong>Project Title Two:</strong> Another description highlighting your funding source, lab partners, or target timeline.</li>
+                <li><strong>Your Name</strong>, & Co-Author. (2026). "Title of Your Best Research Paper." <em>Journal of Examples</em>, 12(3), 45-67.</li>
+                <li>Co-Author, & <strong>Your Name</strong>. (2025). "An Analysis of Contemporary Trends." <em>Review of Studies</em>, 8(1), 112-120.</li>
             </ul>
 
-            <h2>Selected Publications</h2>
+            <h2>Books & Chapters</h2>
             <ul>
-                <li><strong>Your Name</strong>, Co-Author. (2025). "Title of Your Best Journal Article." <em>Journal of Academic Research</em>, 14(2), 123-145.</li>
-                <li>Co-Author, <strong>Your Name</strong>. (2024). "Title of a Conference Proceeding or Paper." <em>International Conference on Topics</em>.</li>
+                <li><strong>Your Name</strong>. (2024). <em>The Main Title of Your Book Name</em>. Publisher House.</li>
             </ul>
         </div>
     </section>
 
-    <!-- Teaching Section -->
-    <section id="teaching">
+    <!-- Presentations Section -->
+    <section id="presentations">
         <div class="section-content">
-            <h1>Teaching</h1>
-            <p>I believe in fostering an inclusive classroom environment focused on critical thinking, hands-on learning, and practical problem-solving.</p>
+            <h1>Presentations</h1>
+            <p>Selected keynote addresses, conference talks, and panel discussions.</p>
             
-            <h2>Current Courses</h2>
             <ul>
-                <li><strong>SUBJ 101: Introduction to Field</strong> (Fall 2026) — Syllabus overview or core themes taught to undergraduates.</li>
-                <li><strong>SUBJ 402: Advanced Seminars</strong> (Spring 2026) — Upper-level course covering special topics and research prep.</li>
+                <li><strong>Keynote Speaker</strong> (2026). "The Future of Our Industry." <em>Global Innovation Conference</em>, New York, NY.</li>
+                <li><strong>Panelist</strong> (2025). "Addressing Ethics in Modern Data." <em>Tech & Society Symposium</em>, Online.</li>
+                <li><strong>Guest Lecturer</strong> (2024). "An Introduction to Research Methods." <em>State University Department Seminar</em>.</li>
             </ul>
+        </div>
+    </section>
 
-            <h2>Past Courses</h2>
-            <ul>
-                <li>SUBJ 205: Intermediate Topic Overview (2024–2025)</li>
-                <li>SUBJ 310: Lab Methods and Practices (2023)</li>
-            </ul>
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="section-content">
+            <h1>Blog</h1>
+            <p>Thoughts, project updates, and commentary on current industry trends.</p>
+            
+            <div class="blog-post">
+                <span class="blog-date">June 10, 2026</span>
+                <h3><a href="#" style="color: #2c3e50; text-decoration: none; border-bottom: 1px solid #3498db;">Launching My New Website</a></h3>
+                <p>Today marks the official launch of my updated portfolio website hosted via GitHub Pages! In this short update, I talk about what to expect here moving forward...</p>
+            </div>
+
+            <div class="blog-post">
+                <span class="blog-date">May 15, 2026</span>
+                <h3><a href="#" style="color: #2c3e50; text-decoration: none; border-bottom: 1px solid #3498db;">Reflections on My Recent Presentation</a></h3>
+                <p>Following my recent talk at the annual symposium, I wanted to summarize the top three questions asked by the audience regarding data privacy limits...</p>
+            </div>
         </div>
     </section>
 
@@ -131,16 +169,12 @@
     <section id="contact">
         <div class="section-content">
             <h1>Contact</h1>
-            <p>Please reach out if you have questions regarding my research, teaching, or potential collaborations.</p>
+            <p>Please feel free to connect for consultation, speaking opportunities, or research inquiries.</p>
             
             <div class="contact-info">
-                <p><strong>Email:</strong> your.email@institution.edu</p>
-                <p><strong>Office:</strong> Hall Name, Room 404</p>
-                <p><strong>Mailing Address:</strong><br>
-                   Department of [Your Department]<br>
-                   [U.S. Air Force]<br>
-                   City, State, Zip Code
-                </p>
+                <p><strong>Email:</strong> professional.email@domain.com</p>
+                <p><strong>Social Networks:</strong> <a href="#" style="color: #3498db;">LinkedIn</a> | <a href="#" style="color: #3498db;">Twitter/X</a> | <a href="#" style="color: #3498db;">GitHub</a></p>
+                <p><strong>Location:</strong> City, State, Country</p>
             </div>
         </div>
     </section>

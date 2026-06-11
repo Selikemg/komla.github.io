@@ -1,11 +1,154 @@
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My GitHub Website</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my brand new website hosted on GitHub Pages.</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Academic Portfolio</title>
+    <style>
+        /* Base Styling */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; }
+        body { background-color: #f4f7f6; }
+        
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; background: #2c3e50; padding: 15px 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .nav-logo { color: #fff; font-weight: bold; font-size: 1.2rem; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: #ddd; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #fff; }
+
+        /* Sections Layout */
+        section { padding: 100px 20px 60px 20px; min-height: 100vh; display: flex; justify-content: center; }
+        .section-content { max-width: 800px; width: 100%; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
+        h2 { font-size: 1.5rem; margin: 20px 0 10px 0; color: #34495e; }
+        p { margin-bottom: 15px; font-size: 1.1rem; }
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        /* Section Background Alternation */
+        #home { background-color: #ffffff; }
+        #research { background-color: #f9f9f9; }
+        #teaching { background-color: #ffffff; }
+        #contact { background-color: #f9f9f9; }
+
+        /* Home Specifics */
+        .profile-area { display: flex; gap: 30px; align-items: center; margin-top: 30px; }
+        .profile-img { width: 200px; height: 200px; border-radius: 50%; background: #bdc3c7; display: flex; align-items: center; justify-content: center; color: #7f8c8d; font-size: 0.9rem; flex-shrink: 0; }
+        
+        /* Contact Specifics */
+        .contact-info { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; }
+        .contact-info p { margin-bottom: 10px; }
+        .contact-info strong { color: #2c3e50; }
+        
+        /* Footer */
+        footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px; font-size: 0.9rem; }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .profile-area { flex-direction: column; text-align: center; }
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-links li { margin: 0 10px; }
+            section { padding-top: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Your Name, PhD</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="section-content">
+            <h1>Welcome</h1>
+            <div class="profile-area">
+                <!-- Replace 'profile.jpg' with your image file name later if you upload one -->
+                <img src="profile.jpg" alt="Your Name Profile Picture" class="profile-img" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+                <div id="avatar-fallback" class="profile-img" style="display:none;">[Photo Placeholder]</div>
+                <div>
+                    <p>Hello! I am a researcher and educator specializing in [Your Field/Department] at [Your Institution].</p>
+                    <p>My work primarily explores [Brief 1-sentence summary of your core interest]. Feel free to look through my current projects and teaching schedule below.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="section-content">
+            <h1>Research</h1>
+            <p>My research focuses on the intersection of [Topic A] and [Topic B]. I investigate how [Core Question Your Research Answers].</p>
+            
+            <h2>Current Projects</h2>
+            <ul>
+                <li><strong>Project Title One:</strong> A brief description of what this ongoing project is about, your methodologies, or goals.</li>
+                <li><strong>Project Title Two:</strong> Another description highlighting your funding source, lab partners, or target timeline.</li>
+            </ul>
+
+            <h2>Selected Publications</h2>
+            <ul>
+                <li><strong>Your Name</strong>, Co-Author. (2025). "Title of Your Best Journal Article." <em>Journal of Academic Research</em>, 14(2), 123-145.</li>
+                <li>Co-Author, <strong>Your Name</strong>. (2024). "Title of a Conference Proceeding or Paper." <em>International Conference on Topics</em>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+        <div class="section-content">
+            <h1>Teaching</h1>
+            <p>I believe in fostering an inclusive classroom environment focused on critical thinking, hands-on learning, and practical problem-solving.</p>
+            
+            <h2>Current Courses</h2>
+            <ul>
+                <li><strong>SUBJ 101: Introduction to Field</strong> (Fall 2026) — Syllabus overview or core themes taught to undergraduates.</li>
+                <li><strong>SUBJ 402: Advanced Seminars</strong> (Spring 2026) — Upper-level course covering special topics and research prep.</li>
+            </ul>
+
+            <h2>Past Courses</h2>
+            <ul>
+                <li>SUBJ 205: Intermediate Topic Overview (2024–2025)</li>
+                <li>SUBJ 310: Lab Methods and Practices (2023)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-content">
+            <h1>Contact</h1>
+            <p>Please reach out if you have questions regarding my research, teaching, or potential collaborations.</p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> your.email@institution.edu</p>
+                <p><strong>Office:</strong> Hall Name, Room 404</p>
+                <p><strong>Mailing Address:</strong><br>
+                   Department of [Your Department]<br>
+                   [Your University]<br>
+                   City, State, Zip Code
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 Your Name. Powered by GitHub Pages.</p>
+    </footer>
+
+</body>
 </html>
